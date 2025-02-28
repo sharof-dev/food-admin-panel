@@ -26,8 +26,8 @@ const SideBar: FC<SideBarProps> = ({ activeMenu, setActiveMenu }) => {
   ];
   const navigate = useNavigate();
 
-  const handleClick = (path: string) => {
-    setActiveMenu(path);
+  const handleClick = (path: string, name: string) => {
+    setActiveMenu(name);
     navigate(path);
   };
 
@@ -39,9 +39,9 @@ const SideBar: FC<SideBarProps> = ({ activeMenu, setActiveMenu }) => {
       <div className="flex-1 py-4 overflow-y-auto">
         <ul className="space-y-2 px-4">
           {menuItems.map(item => (
-            <li key={item.name} className="">
+            <li key={item.name} >
               <button
-                onClick={() => handleClick(item.path)}
+                onClick={() => handleClick(item.path, item.name)}
                 className={classNames("flex items-center w-full px-4 py-3 text-sm rounded-lg", activeMenu === item.name ? "text-[#2B964F]" : "text-gray-600")}
               >
                 <span className="mr-3">{item.icon}</span>
