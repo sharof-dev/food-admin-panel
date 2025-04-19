@@ -8,13 +8,14 @@ import Reports from "./pages/reports/Reports";
 import DeliveryManagment from "./pages/delivery-managment/DeliveryManagment";
 import MessageChats from "./pages/message/MessageChats";
 import Settings from "./pages/settings/Settings";
-import Login from "./components/Auth/Login";
-import Register from "./components/Auth/Register";
+import Register from "./pages/Auth/Register";
+import { lazy } from "react";
+const Login = lazy(() => import("./pages/Auth/Login"))
 
 export const routes = createBrowserRouter([
     {
         path: '/',
-        element: <MainLayout auth={true} />,
+        element: <MainLayout  />,
         children: [
             { 
                 index: true,

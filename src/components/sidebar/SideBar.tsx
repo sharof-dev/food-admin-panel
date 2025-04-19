@@ -13,6 +13,7 @@ import classNames from "classnames"
 import { FC } from "react";
 import { AiOutlineAppstore } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { removeItem } from "../../lib/utils/storage";
 const SideBar: FC<SideBarProps> = ({ activeMenu, setActiveMenu }) => {
   const menuItems = [
     { name: 'Dashboard', icon: <AiOutlineAppstore size={20} />, badge: '10', path: 'dashboard' },
@@ -23,12 +24,16 @@ const SideBar: FC<SideBarProps> = ({ activeMenu, setActiveMenu }) => {
     { name: 'Delivery Management', icon: <RiTruckLine size={20} />,path: 'delivery-management'},
     { name: 'Messages & Chats', icon: <RiMessage2Line size={20} />, badge: '5', path: 'message-chats'},
     { name: 'System Settings', icon: <RiSettings4Line size={20} />, path: 'settings'},
+    { name: 'logout', icon: <RiSettings4Line size={20} />, path: ''},
   ];
   const navigate = useNavigate();
 
   const handleClick = (path: string, name: string) => {
     setActiveMenu(name);
     navigate(path);
+    if(name === 'logout') {
+      removeItem("auth")
+    }
   };
 
   return (
@@ -42,7 +47,7 @@ const SideBar: FC<SideBarProps> = ({ activeMenu, setActiveMenu }) => {
             <li key={item.name} >
               <button
                 onClick={() => handleClick(item.path, item.name)}
-                className={classNames("flex items-center w-full px-4 py-3 text-sm rounded-lg", activeMenu === item.name ? "text-[#2B964F]" : "text-gray-600")}
+                className={classNames("flex items-center w-full  px-4 py-3 text-sm rounded-lg", activeMenu === item.name ? "text-[#2B964F]" : "text-gray-600")}
               >
                 <span className="mr-3">{item.icon}</span>
                 <span>{item.name}</span>

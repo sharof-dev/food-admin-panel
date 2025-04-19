@@ -1,0 +1,7 @@
+.bg-image {
+    background-image: url("../../assets//image/login_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    object-fit: cover;
+}

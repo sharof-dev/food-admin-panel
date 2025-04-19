@@ -1,11 +1,13 @@
 import { Outlet, Navigate } from "react-router-dom"
 import Header from "../components/header/Header"
 import SideBar from "../components/sidebar/SideBar"
-import { LayoutProps } from "../types/layout/layout"
+// import { LayoutProps } from "../types/layout/layout"
 import { useState } from "react"
+import { getItem } from "../lib/utils/storage"
 
-const MainLayout = ({ auth }: LayoutProps) => {
+const MainLayout = () => {
     const [activeMenu, setActiveMenu] = useState("dashboard")
+    const auth = getItem("auth")
     if (!auth) {
         return <Navigate to="/login" />
     }
