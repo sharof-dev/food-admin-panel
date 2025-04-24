@@ -1,0 +1,22 @@
+.my-calendar .rdp-root {
+    --rdp-accent-color: #2B964F; /* example: indigo-600 */
+    --rdp-background-color: #f3f4f6; /* example: gray-100 */
+    --rdp-selected-color: white;
+    --rdp-selected-bg: #2B964F;
+    --rdp-hover-bg: #e0e7ff;
+  }
+  
+.my-calendar .rdp-today {
+    background-color: #2B964F !important;
+    color: white !important;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #2B964F;
+}
+.my-calendar {
+    background-color: #ffffff;
+    padding: 24px 24px;
+    border-radius: 12px;
+}
+.rdp-chevron {
+    fill:#2B964F ;
+}

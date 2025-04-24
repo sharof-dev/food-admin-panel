@@ -65,12 +65,12 @@ const PieChartSection = (): JSX.Element => {
 
     return (
         <div className="w-full max-w-[431px]">
-            <Card className="relative bg-white h-[119px]">
-                <div className="top-2.5 left-3 absolute font-bold text-[#191a1f] text-[10px] leading-normal tracking-[0] whitespace-nowrap">
+            <Card className="relative bg-white px-3 py-4.5">
+                <div className="top-2.5 left-3 absolute mb-5 font-bold text-[#191a1f] text-[10px] leading-normal tracking-[0] whitespace-nowrap">
                     Pie Chart
                 </div>
-                <CardContent className="p-0">
-                    <div className="flex justify-center items-center pt-[23px]">
+                <CardContent className="top-2 relative p-0">
+                    <div className="flex justify-center items-center">
                         <div className="flex gap-[57px]">
                             {pieChartData.map(renderPieChart)}
                         </div>

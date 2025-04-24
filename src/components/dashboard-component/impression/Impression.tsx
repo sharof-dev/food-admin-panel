@@ -1,9 +1,9 @@
-import React from 'react'
+import { FC } from 'react'
 import { IoMdArrowDown } from 'react-icons/io'
 
-const Impression = () => {
+const Impression:FC = () => {
   return (
-    <div className="bg-white shadow px-6 py-3 rounded-lg">
+    <div className="bg-white shadow px-6 py-2 rounded-lg">
           <p className="mb-3 text-gray-500 text-sm">Impressions</p>
           <div className="flex">
             <h3 className="font-bold text-gray-800 text-3xl">40,555K</h3>
