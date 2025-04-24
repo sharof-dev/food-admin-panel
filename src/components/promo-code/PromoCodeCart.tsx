@@ -1,7 +1,5 @@
-"use client"
-
 import { useState } from "react"
-import { Search, Download, Plus, Edit2, Trash2 } from "lucide-react"
+import { Edit2, Trash2 } from "lucide-react"
 
 // Sample promo code data
 const initialPromoCodes = [
@@ -14,27 +12,6 @@ const initialPromoCodes = [
   },
   {
     id: 2,
-    title: "Bahor aksiyasi -20%",
-    dateRange: "1-martdan 31-martgacha",
-    progress: 63,
-    description: "10 ta set olsa, -20%",
-  },
-  {
-    id: 3,
-    title: "Bahor aksiyasi -20%",
-    dateRange: "1-martdan 31-martgacha",
-    progress: 63,
-    description: "10 ta set olsa, -20%",
-  },
-  {
-    id: 3,
-    title: "Bahor aksiyasi -20%",
-    dateRange: "1-martdan 31-martgacha",
-    progress: 63,
-    description: "10 ta set olsa, -20%",
-  },
-  {
-    id: 3,
     title: "Bahor aksiyasi -20%",
     dateRange: "1-martdan 31-martgacha",
     progress: 63,
@@ -70,10 +47,12 @@ const initialPromoCodes = [
   },
 ]
 
-export function PromoCodeList() {
+interface PromoCodeListProps {
+  searchTerm: string;
+}
+
+export function PromoCodeList({searchTerm}: PromoCodeListProps) {
   const [promoCodes, setPromoCodes] = useState(initialPromoCodes)
-  const [searchTerm, setSearchTerm] = useState("")
-  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const filteredPromoCodes = promoCodes.filter((code) => code.title.toLowerCase().includes(searchTerm.toLowerCase()))
 
@@ -81,16 +60,6 @@ export function PromoCodeList() {
     setPromoCodes(promoCodes.filter((code) => code.id !== id))
   }
 
-  const handleAddPromoCode = (newPromoCode: any) => {
-    setPromoCodes([
-      ...promoCodes,
-      {
-        id: promoCodes.length + 1,
-        ...newPromoCode,
-      },
-    ])
-    setIsModalOpen(false)
-  }
 
   return (
     <div>

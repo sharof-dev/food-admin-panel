@@ -1,7 +1,6 @@
-import React, { JSX } from "react";
+import { JSX } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../UI/card/Card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../UI/select/select";
-import { ChevronDownIcon } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 export const DeliveryStatusSection = (): JSX.Element => {

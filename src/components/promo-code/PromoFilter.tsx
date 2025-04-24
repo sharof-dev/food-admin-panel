@@ -1,7 +1,12 @@
 import { Search } from "lucide-react"
 import { FC } from "react"
 
-const PromoFilter: FC = () => {
+interface PromoFilterProps {
+    searchTerm: string;
+    setSearchTerm: (value: string) => void;
+  }
+
+const PromoFilter: FC<PromoFilterProps> = ({ searchTerm, setSearchTerm }) => {
     return (
         <div>
             <div className="flex justify-between items-center bg-white mb-6 p-3 rounded-l-2xl">
@@ -10,6 +15,8 @@ const PromoFilter: FC = () => {
                     <input
                         type="text"
                         placeholder="Search..."
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        value={searchTerm}
                         className="pr-4 pl-10 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 h-10"
                     />
                 </div>

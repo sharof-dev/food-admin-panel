@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/style.css";

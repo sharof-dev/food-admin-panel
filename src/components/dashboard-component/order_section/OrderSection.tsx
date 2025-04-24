@@ -1,8 +1,8 @@
-import React, { JSX } from "react";
+import { JSX } from "react";
 import { Card, CardContent } from "../../../UI/card/Card";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../../../UI/select/select";
 import { ChevronDownIcon } from "lucide-react";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 export const OrderChartSection = (): JSX.Element => {
   const data = [
