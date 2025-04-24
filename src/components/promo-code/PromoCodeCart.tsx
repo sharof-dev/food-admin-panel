@@ -51,7 +51,7 @@ interface PromoCodeListProps {
   searchTerm: string;
 }
 
-export function PromoCodeList({searchTerm}: PromoCodeListProps) {
+export function PromoCodeList({ searchTerm }: PromoCodeListProps) {
   const [promoCodes, setPromoCodes] = useState(initialPromoCodes)
 
   const filteredPromoCodes = promoCodes.filter((code) => code.title.toLowerCase().includes(searchTerm.toLowerCase()))
